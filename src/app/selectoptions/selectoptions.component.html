@@ -1,0 +1,25 @@
+<div class="container" align="center">
+
+  <div class = "jumbotron loginsize" align="center" style="background-color:white;width:700px;height:300px;margin-top:100px">
+    <p style="color:Red">Task Reminder App</p>
+
+    <p style="color:blue;font-size: 15px">Please select one option</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href='/createtask'  type="button" class="btn btn-success" id="task" >Create Task</a>
+        </div>
+        <div class="col-sm-3">
+          <a href='/viewtask/' type="button" class="btn btn-info" id="view">View Task</a>
+        </div>
+        <div class="col-sm-3">
+          <a href='/viewnotification' type="button" class="btn btn-warning" id="noti">View All Notifications</a>
+        </div>
+        <div class="col-sm-3">
+          <button (click)="logout()"  type="button" class="btn btn-danger" id="logout">logout</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container" align="center">
+
+  <div class="jasmine-warning" *ngIf="message">
+    <p>{{message}}</p>
+
+  </div>
+
+  <div class = "jumbotron loginsize" align="center" style="background-color:white;width:450px;height:300px;margin-top:100px">
+    <p style="color:Red">Task Reminder App</p>
+
+    <p style="color:blue;font-size: 18px">Create a account</p>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-group">
+
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" formControlName="username" placeholder="Username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+
+      </div>
+      <div class="input-group" style="margin-top:10px;margin-bottom:10px">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Register
+        </button>
+        <a routerLink="/login" class="btn btn-link">Login</a>
+      </div>
+    </form>
+  </div>
+</div>

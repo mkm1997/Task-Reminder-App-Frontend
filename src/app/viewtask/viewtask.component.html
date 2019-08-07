@@ -1,0 +1,38 @@
+<div class="container" align="center">
+
+  <div class = "jumbotron loginsize" align="center" style="background-color:white;width:600px;margin-top:100px">
+    <p style="color:Red">Task Reminder App</p>
+
+    <p style="color:blue;font-size: 15px">View The Task</p>
+    <div class="container">
+
+      <div class="row pull-right">
+        <select *ngIf = "Userdata" (change)="onChange($event.target.value)">
+          <option>Select user</option>
+          <option   *ngFor="let data of Userdata.data" [value]="data.username">{{data.username}}</option>
+
+        </select>
+
+      </div>
+
+      <br>
+      <br>
+
+
+      <div class="row" id="tab">
+
+        <table>
+          <thead>
+
+          <tr><th>Task Name</th><th>Username</th><th> Deadline</th></tr>
+          </thead>
+          <tbody *ngIf="Data">
+          <tr *ngFor="let data of Data.data"><td>{{data.task_name}}</td><td>{{data.assignee.username}}</td><td>{{data.due_date}}</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>
